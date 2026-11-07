@@ -1,0 +1,51 @@
+--- Heuristic audit (supplied h) ---
+Node | h(n) | true remaining | admissible (h <= true)
+S | 5 | 6 | True
+A | 4 | 5 | True
+B | 4 | 5 | True
+C | 2 | 3 | True
+G | 0 | 0 | True
+Edge | h(u) | cost + h(v) | consistent (h(u) <= cost + h(v))
+S->A | 5 | 1+4=5 | True
+S->B | 5 | 4+4=8 | True
+A->C | 4 | 2+2=4 | True
+B->G | 4 | 5+0=5 | True
+C->G | 2 | 3+0=3 | True
+
+Hand-check of first three expansions: S (0,5,5), A (1,4,5), C (3,2,5); then G (6,0,6) vs B (4,4,8)
+
+=== A* with supplied heuristic ===
+  step | processed (g,h,f) | frontier after step [(node,g,h,f)]
+  1 | S (g=0,h=5,f=5) | [('A', 1, 4, 5), ('B', 4, 4, 8)]
+  2 | A (g=1,h=4,f=5) | [('C', 3, 2, 5), ('B', 4, 4, 8)]
+  3 | C (g=3,h=2,f=5) | [('G', 6, 0, 6), ('B', 4, 4, 8)]
+  GOAL G (g=6,h=0,f=6) selected -> stop
+  path=['S', 'A', 'C', 'G'] returned_cost=6 independent_sum=6
+  processed order=['S', 'A', 'C', 'G'] expansions(excl. goal)=3
+
+=== UCS control (all h = 0) ===
+  step | processed (g,h,f) | frontier after step [(node,g,h,f)]
+  1 | S (g=0,h=0,f=0) | [('A', 1, 0, 1), ('B', 4, 0, 4)]
+  2 | A (g=1,h=0,f=1) | [('C', 3, 0, 3), ('B', 4, 0, 4)]
+  3 | C (g=3,h=0,f=3) | [('B', 4, 0, 4), ('G', 6, 0, 6)]
+  4 | B (g=4,h=0,f=4) | [('G', 6, 0, 6)]
+  GOAL G (g=6,h=0,f=6) selected -> stop
+  path=['S', 'A', 'C', 'G'] returned_cost=6 independent_sum=6
+  processed order=['S', 'A', 'C', 'B', 'G'] expansions(excl. goal)=4
+
+Overestimate experiment: h(C) changed from 2 to 10 (true remaining cost of C = 3)
+
+=== A* with h(C) = 10 ===
+  step | processed (g,h,f) | frontier after step [(node,g,h,f)]
+  1 | S (g=0,h=5,f=5) | [('A', 1, 4, 5), ('B', 4, 4, 8)]
+  2 | A (g=1,h=4,f=5) | [('B', 4, 4, 8), ('C', 3, 10, 13)]
+  3 | B (g=4,h=4,f=8) | [('G', 9, 0, 9), ('C', 3, 10, 13)]
+  GOAL G (g=9,h=0,f=9) selected -> stop
+  path=['S', 'B', 'G'] returned_cost=9 independent_sum=9
+  processed order=['S', 'A', 'B', 'G'] expansions(excl. goal)=3
+
+SUMMARY TABLE
+run | path | cost | expansions
+A* supplied h | S->A->C->G | 6 | 3
+UCS h=0 | S->A->C->G | 6 | 4
+A* h(C)=10 | S->B->G | 9 | 3
