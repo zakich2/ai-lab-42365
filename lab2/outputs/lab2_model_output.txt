@@ -1,0 +1,9 @@
+step | previous_mode | percept | target | command
+1 | None | (29, True) | COOL | SEND
+2 | COOL | (29, True) | COOL | no-command
+3 | COOL | (20, True) | IDLE | SEND
+4 | IDLE | (26, True) | IDLE | no-command
+5 | IDLE | (19, True) | WARM | SEND
+6 | WARM | (29, True) | COOL | SEND
+7 | COOL | (29, False) | ECO | SEND
+8 | ECO | (29, False) | ECO | no-command

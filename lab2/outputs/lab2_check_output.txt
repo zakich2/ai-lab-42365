@@ -1,0 +1,19 @@
+Correctness checks passed
+
+Noisy sequence around 26 C (occupied room), plain stateful agent
+26.2 COOL SEND
+25.8 IDLE SEND
+26.3 COOL SEND
+25.7 IDLE SEND
+26.4 COOL SEND
+25.6 IDLE SEND
+Commands sent: 6 of 6 readings -> flapping
+
+Same noisy sequence, hysteresis agent (stop cooling at <= 25 C)
+26.2 COOL SEND
+25.8 COOL no-command
+26.3 COOL no-command
+25.7 COOL no-command
+26.4 COOL no-command
+25.6 COOL no-command
+Commands sent: 1 of 6 readings

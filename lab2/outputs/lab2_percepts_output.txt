@@ -1,0 +1,6 @@
+1 (29, True) target mode COOL
+2 (29, True) target mode COOL
+3 (20, True) target mode IDLE
+4 (26, True) target mode IDLE
+5 (19, True) target mode WARM
+6 (29, False) target mode ECO
