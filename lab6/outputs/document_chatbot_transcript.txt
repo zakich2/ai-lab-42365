@@ -1,0 +1,20 @@
+Evidence assistant. Type exit to stop.
+Question: Candidate evidence; relevance must be checked:
+1 contractor:1 0.465 characters 165 368
+2 contractor:2 0.266 characters 369 554
+3 late:4 0.085 characters 715 922
+Choose 1-3 to inspect; Enter if none apply: Retrieved passage: Employees may request remote work with manager approval, and an approved arrangement can last up to six months before it is reviewed. Contractors can work remotely only if the signed contract permits it.
+Source: contractor characters 165 368
+Question: Candidate evidence; relevance must be checked:
+1 late:5 0.209 characters 923 1149
+2 assignment:2 0.131 characters 379 513
+3 contractor:0 0.122 characters 0 164
+Choose 1-3 to inspect; Enter if none apply: No answer selected. Rephrase or contact a human.
+Question: Candidate evidence; relevance must be checked:
+1 contractor:1 0.166 characters 165 368
+2 password:0 0.121 characters 0 251
+3 password:1 0.120 characters 252 472
+Choose 1-3 to inspect; Enter if none apply: Retrieved passage: Employees may request remote work with manager approval, and an approved arrangement can last up to six months before it is reviewed. Contractors can work remotely only if the signed contract permits it.
+Source: contractor characters 165 368
+Question: No candidate evidence; rephrase or contact a human.
+Question: 

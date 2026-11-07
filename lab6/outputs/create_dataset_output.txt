@@ -1,0 +1,6 @@
+Created corpus.json and queries.json
+late words: 193
+password words: 194
+assignment words: 187
+contractor words: 178
+printer words: 189

@@ -1,0 +1,7 @@
+remote:contractor score=0.435
+Contractors may work remotely only when the signed contract explicitly permits remote work.
+--- experiment: no filter (risk: employee rule may rank first) ---
+remote:contractor score=0.435
+Contractors may work remotely only when the signed contract explicitly permits remote work.
+remote:staff score=0.394
+Employees may request remote work with manager approval.

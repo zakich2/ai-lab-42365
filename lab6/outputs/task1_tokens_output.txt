@@ -1,0 +1,9 @@
+original | whitespace tokens | count | word-like tokens | count
+'AI, search!' | ['AI,', 'search!'] 2 | ['AI', 'search'] 2
+"I can't log in." | ['I', "can't", 'log', 'in.'] 4 | ['I', 'can', 't', 'log', 'in'] 5
+'help@example.com' | ['help@example.com'] 1 | ['help', 'example', 'com'] 3
+'CS4944 lab 6' | ['CS4944', 'lab', '6'] 3 | ['CS4944', 'lab', '6'] 3
+'' | [] 0 | [] 0
+'یہ ایک مثال ہے' | ['یہ', 'ایک', 'مثال', 'ہے'] 4 | ['یہ', 'ایک', 'مثال', 'ہے'] 4
+
+Model tokenizer unavailable: ModuleNotFoundError

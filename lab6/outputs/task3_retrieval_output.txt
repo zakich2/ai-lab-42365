@@ -1,0 +1,16 @@
+strategy | method | split | Hit@3 | MRR@3 | chunks | encode_s | search_s | failed queries
+0 | tfidf | dev | 1.0 | 1.0 | 25 | 0.0133 | 0.00027 | []
+0 | tfidf | test | 0.5 | 0.208 | 25 | 0.0133 | 0.00027 | ['What do I do for blank printer pages?', 'What proof is needed when I was ill?']
+10 | tfidf | dev | 1.0 | 1.0 | 32 | 0.0035 | 0.00022 | []
+10 | tfidf | test | 0.75 | 0.333 | 32 | 0.0035 | 0.00022 | ['What proof is needed when I was ill?']
+sentence | tfidf | dev | 1.0 | 0.875 | 34 | 0.0028 | 0.00019 | []
+sentence | tfidf | test | 0.75 | 0.5 | 34 | 0.0028 | 0.00019 | ['What proof is needed when I was ill?']
+Wrote retrieval_log.csv with 90 rows
+
+Unanswerable queries - top-1 result per configuration (shows why a score is not an answer):
+0 tfidf "What are tomorrow's flight prices?" late:4 0.2015
+0 tfidf 'Who won the football match?' contractor:4 0.2337
+10 tfidf "What are tomorrow's flight prices?" assignment:2 0.1949
+10 tfidf 'Who won the football match?' late:3 0.2223
+sentence tfidf "What are tomorrow's flight prices?" late:5 0.2087
+sentence tfidf 'Who won the football match?' assignment:4 0.203

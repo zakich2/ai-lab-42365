@@ -1,0 +1,14 @@
+returns:damage score=0.373
+For a damaged parcel, contact support within 48 hours and attach photographs of the item and packaging.
+--- experiment: no filter ---
+returns:damage score=0.373
+For a damaged parcel, contact support within 48 hours and attach photographs of the item and packaging.
+returns:damage:other score=0.252
+Damaged parcel reports in the other region have a 72 hour window.
+--- experiment: 'My parcel arrived broken' (TF-IDF) ---
+returns:damage:other score=0.244
+Damaged parcel reports in the other region have a 72 hour window.
+returns:damage score=0.193
+For a damaged parcel, contact support within 48 hours and attach photographs of the item and packaging.
+returns:change score=0.000
+For a change of mind, return unused items within 14 days.

@@ -1,0 +1,18 @@
+Documents: 5 | original words: 941
+
+strategy | chunks | avg words | max words | duplicate words | evidence kept | rule+exception kept
+0 | 25 | 37.6 | 40 | 0 | 4/5 | 1/2
+10 | 32 | 37.8 | 40 | 270 | 5/5 | 2/2
+sentence | 34 | 27.7 | 40 | 0 | 5/5 | 1/2
+
+Per-document evidence survival (True = full evidence sentence inside one chunk)
+0 {'late': True, 'password': True, 'assignment': True, 'contractor': True, 'printer': False}
+10 {'late': True, 'password': True, 'assignment': True, 'contractor': True, 'printer': True}
+sentence {'late': True, 'password': True, 'assignment': True, 'contractor': True, 'printer': True}
+
+=== Required boundary tests ===
+empty text            : windows = [] | sentence = []
+shorter than budget   : windows = [(0, 18)] | sentence = [(0, 18)]
+invalid overlap       : ValueError -> Require size > 0 and 0 <= overlap < size
+95-word sentence      : sentence chunks = 3 | words per chunk = [40, 40, 15]
+abbreviation failure  : ['Dr.', 'Khan teaches AI.', 'Prof.', 'Ali teaches ML.']

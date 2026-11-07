@@ -1,0 +1,5 @@
+long 95-word sentence -> 3 fallback chunks
+0 {'id': 'example:0', 'doc': 'example', 'start': 0, 'end': 49, 'text': 'Reset your password. Keep recovery codes private.'}
+10 {'id': 'example:0', 'doc': 'example', 'start': 0, 'end': 49, 'text': 'Reset your password. Keep recovery codes private.'}
+sentence {'id': 'example:0', 'doc': 'example', 'start': 0, 'end': 49, 'text': 'Reset your password. Keep recovery codes private.'}
+All chunking tests passed

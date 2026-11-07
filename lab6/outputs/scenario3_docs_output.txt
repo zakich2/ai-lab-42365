@@ -1,0 +1,7 @@
+auth:v2 score=0.431
+Renew an expired API token with POST /v2/token/refresh. Send the refresh_token field; never print its value in logs.
+--- experiment: filter v1 ---
+auth:v1 score=0.669
+Renew an expired API token with POST /v1/auth/renew.
+--- experiment: nonexistent version v9 ---
+No matching records.
