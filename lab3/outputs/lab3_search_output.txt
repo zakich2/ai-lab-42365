@@ -1,0 +1,24 @@
+Supplied code  BFS: ['A', 'B', 'E', 'G']
+Supplied code  DFS: ['A', 'B', 'E', 'G']
+
+BFS trace (frontier = queue, front on the left)
+step | processed | path | frontier after step
+1 | A | A | ['B', 'C']
+2 | B | A->B | ['C', 'D', 'E']
+3 | C | A->C | ['D', 'E', 'F']
+4 | D | A->B->D | ['E', 'F']
+5 | E | A->B->E | ['F', 'G']
+6 | F | A->C->F | ['G']
+7 | G | A->B->E->G | [] | GOAL
+BFS final path: ['A', 'B', 'E', 'G']
+BFS visit order: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+DFS trace (frontier = stack, TOP is the right-most item)
+step | processed | path | frontier after step
+1 | A | A | ['C', 'B']
+2 | B | A->B | ['C', 'E', 'D']
+3 | D | A->B->D | ['C', 'E']
+4 | E | A->B->E | ['C', 'G']
+5 | G | A->B->E->G | ['C'] | GOAL
+DFS final path: ['A', 'B', 'E', 'G']
+DFS visit order: ['A', 'B', 'D', 'E', 'G']

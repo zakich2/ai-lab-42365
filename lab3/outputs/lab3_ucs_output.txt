@@ -1,0 +1,16 @@
+Weighted graph (edge: weight):
+  A -> B: 1
+  A -> C: 5
+  B -> D: 1
+  B -> E: 1
+  C -> F: 2
+  C -> G: 7   <- added corridor
+  E -> G: 1
+
+UCS  path: ['A', 'B', 'E', 'G'] | returned cost: 3 | independent sum: 3 | edges: 3
+UCS  processing order (node, g): [('A', 0), ('B', 1), ('D', 2), ('E', 2), ('G', 3)]
+
+BFS  path: ['A', 'C', 'G'] | independent cost: 12 | edges: 2
+BFS  processing order: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+Conclusion: BFS has fewer edges (2 vs 3) but higher cost (12 vs 3).

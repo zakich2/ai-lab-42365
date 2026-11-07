@@ -1,0 +1,17 @@
+=== DLS on original graph, start A, goal G ===
+limit=1 status=CUTOFF path=None nodes_visited=3
+limit=2 status=CUTOFF path=None nodes_visited=6
+limit=3 status=FOUND path=['A', 'B', 'E', 'G'] nodes_visited=5
+limit=4 status=FOUND path=['A', 'B', 'E', 'G'] nodes_visited=5
+
+=== IDDFS with maximum depths 1..4 ===
+max_depth=1 status=CUTOFF path=None limits_attempted=[0, 1] total_node_visits=4
+max_depth=2 status=CUTOFF path=None limits_attempted=[0, 1, 2] total_node_visits=10
+max_depth=3 status=FOUND path=['A', 'B', 'E', 'G'] limits_attempted=[0, 1, 2, 3] total_node_visits=15
+max_depth=4 status=FOUND path=['A', 'B', 'E', 'G'] limits_attempted=[0, 1, 2, 3] total_node_visits=15
+
+=== Edge cases ===
+start == goal      : ('FOUND', ['A'])
+unreachable goal Z : ('FAILURE', None, [0, 1, 2, 3])
+cycle graph, goal C: ('FOUND', ['A', 'B', 'C'], [0, 1, 2])
+cycle graph, goal X: ('FAILURE', None, [0, 1, 2])
